@@ -52,16 +52,15 @@ $(document).ready(function() {
 	});
 	
 	function makePostRequest(URL, data) {
-				$.post(URL, data, function(data, status) {alert(status);});
-				refreshData();
+				$.when($.post(URL, data, function(data, status) {alert(status);})).then(function() {refreshData();});
 	}
 	
 	$("#addCategory").click(function() {
 		var data = {
 								action: "add",
-								name: "Cars",
-								description: "Car collection"
-							}
+								name: $("#categoryName").val(),
+								description: $("#categoryDescription").val()
+							};
 		makePostRequest(CATEGORIES_URL, data);
 	});
 	
@@ -78,10 +77,9 @@ $(document).ready(function() {
 	$("#addBookmark").click(function() {
 		var data = {
 								action: "add",
-								name: "New Bookmark",
+								name: $("#bookmarkName").val(),
 								link: "https://google.com.ua",
 								description: "This is a new bookmark",
-								imgsource: "https://pbs.twimg.com/profile_images/603358468746031106/ydfCsPqr.png",
 								categoryid: currentCategoryId
 							}
 		makePostRequest(BOOKMARKS_URL, data);
