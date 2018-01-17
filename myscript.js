@@ -52,10 +52,21 @@ $(document).ready(function() {
 	});
 	
 	function makePostRequest(URL, data) {
-				$.when($.post(URL, data, function(data, status) {alert(status);})).then(function() {refreshData();});
+				$.when($.post(URL, data, function(data, status) {
+					// alert(status);
+				})).then(function() {refreshData();});
 	}
 	
 	$("#addCategory").click(function() {
+		var data = {
+								action: "add",
+								name: $("#categoryName").val(),
+								description: $("#categoryDescription").val()
+							};
+		makePostRequest(CATEGORIES_URL, data);
+	});
+	
+	$("#editCategory").click(function() {
 		var data = {
 								action: "add",
 								name: $("#categoryName").val(),
@@ -78,8 +89,8 @@ $(document).ready(function() {
 		var data = {
 								action: "add",
 								name: $("#bookmarkName").val(),
-								link: "https://google.com.ua",
-								description: "This is a new bookmark",
+								link: $("#bookmarkLink").val(),
+								description: $("#bookmarkDescription").val(),
 								categoryid: currentCategoryId
 							}
 		makePostRequest(BOOKMARKS_URL, data);
