@@ -8,11 +8,11 @@
 	</head>
 
 	<body>
-		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#categoryModal">Add category</button>
-		<button id = "editCategory">Edit category</button>
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#categoryAddingModal">Add category</button>
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#categoryEditingModal" id = "fillCategoryEditingModal">Edit category</button>
 		<button id = "deleteCategory">Delete category</button>
-		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#bookmarkModal">Add bookmark</button>
-		<button id = "editBookmark">Edit bookmark</button>
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#bookmarkAddingModal">Add bookmark</button>
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#bookmarkEditingModal" id = "fillBookmarkEditingModal">Edit bookmark</button>
 		<button id = "deleteBookmark">Delete bookmark</button>
 		
 		<div>
@@ -28,8 +28,8 @@
 		
 		<!-- *************************************************************************** -->
 		
-		<!-- The Category Modal -->
-		<div class="modal fade" id="categoryModal">
+		<!-- The Category Adding Modal -->
+		<div class="modal fade" id="categoryAddingModal">
 			<div class="modal-dialog">
 				<div class="modal-content">
 
@@ -61,8 +61,41 @@
 			</div>
 		</div>
 		
-			<!-- The Bookmark Modal -->
-		<div class="modal fade" id="bookmarkModal">
+		<!-- The Category Editing Modal -->
+		<div class="modal fade" id="categoryEditingModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+
+					<!-- Modal Header -->
+					<div class="modal-header">
+						<h4 class="modal-title">Editing of category:</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+
+					<!-- Modal body -->
+					<div class="modal-body">
+						<div class="form-group">
+						<label for="name">Name:</label>
+						<input type="text" class="form-control" id="categoryNameEdit">
+					</div>
+					<div class="form-group">
+						<label for="description">Description:</label>
+						<input type="text" class="form-control" id="categoryDescriptionEdit">
+					</div>
+					</div>
+
+					<!-- Modal footer -->
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" id="editCategory" data-dismiss="modal">Save</button>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		
+			<!-- The Bookmark Adding Modal -->
+		<div class="modal fade" id="bookmarkAddingModal">
 			<div class="modal-dialog">
 				<div class="modal-content">
 
@@ -91,6 +124,43 @@
 					<!-- Modal footer -->
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" id="addBookmark" data-dismiss="modal">Save</button>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		
+		
+		<!-- The Bookmark Editing Modal -->
+		<div class="modal fade" id="bookmarkEditingModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+
+					<!-- Modal Header -->
+					<div class="modal-header">
+						<h4 class="modal-title">Editing of new bookmark:</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+
+					<!-- Modal body -->
+					<div class="modal-body">
+						<div class="form-group">
+						<label for="name">Name:</label>
+						<input type="text" class="form-control" id="bookmarkNameEdit">
+					<div class="form-group">
+						<label for="description">Description:</label>
+						<input type="text" class="form-control" id="bookmarkDescriptionEdit">
+					</div>
+					<div class="form-group">
+						<label for="link">Link:</label>
+						<input type="text" class="form-control" id="bookmarkLinkEdit">
+					</div>
+				</div>
+
+					<!-- Modal footer -->
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" id="editBookmark" data-dismiss="modal">Save</button>
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 					</div>
 
