@@ -95,6 +95,11 @@ $(document).ready(function() {
 		makePostRequest(CATEGORIES_URL, data);
 	});
 	
+	$("#emptyCategoryAddingModal").click(function() {
+		$("#categoryName").val('');
+		$("#categoryDescription").val('');
+	});
+	
 	$("#fillCategoryEditingModal").click(function() {
 		if (!currentCategoryId) {
 			return;
@@ -142,6 +147,12 @@ $(document).ready(function() {
 							};
 		currentBookmarkId = null;
 		makePostRequest(BOOKMARKS_URL, data);
+	});
+	
+	$("#emptyBookmarkAddingModal").click(function() {
+		$("#bookmarkName").val('');
+		$("#bookmarkDescription").val('');
+		$("#bookmarkLink").val('');		
 	});
 	
 	$("#fillBookmarkEditingModal").click(function() {
